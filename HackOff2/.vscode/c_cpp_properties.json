@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\Users\\Antony J K\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.7.4\\**",
+                "D:\\Program Files (x86)\\Arduino\\libraries\\**",
+                "C:\\Users\\Antony J K\\Documents\\Arduino\\libraries\\**",
+                "C:\\Users\\Antony J K\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\**",
+                "D:\\Program Files (x86)\\Arduino\\hardware\\tools\\**",
+                "D:\\Program Files (x86)\\Arduino\\libraries\\**",
+                "C:\\Users\\Antony J K\\Documents\\Arduino\\libraries\\**",
+                "C:\\Users\\Antony J K\\Documents\\Arduino\\libraries\\ArduinoJson\\**",
+                "C:\\Users\\Antony J K\\Documents\\Arduino\\libraries\\PID\\**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "ARDUINO=10800",
+                "USBCON"
+            ],
+            "compilerPath": "D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "msvc-x64",
+            "forcedInclude": []
+        }
+    ],
+    "version": 4
+}
