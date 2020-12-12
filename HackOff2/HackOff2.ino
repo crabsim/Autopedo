@@ -206,8 +206,7 @@ void loop()
           }
           if(digitalRead(D4) == HIGH)
           {
-            mode = 0;
-            inst = 0;
+            initialise();
             break;
           }
         }
@@ -247,8 +246,7 @@ void loop()
             dist["distance"] = distance;
             serializeJson(dist, s);
             postData(bac, s);
-            mode = 0;
-            inst = 0;
+            initialise();
             break;
           }
         }
@@ -311,8 +309,7 @@ void loop()
           }
           if(digitalRead(D4) == HIGH)
           {
-            mode = 0;
-            inst = 0;
+            initialise();
             break;
           }
         }
@@ -345,8 +342,7 @@ void loop()
           }
           if(digitalRead(D4) == HIGH)
           {
-            mode = 0;
-            inst = 0;
+            initialise();
             break;
           }
         }
