@@ -226,6 +226,12 @@ def post_hand():
         else:
             return command.start
 
+@app.route("/results", methods=['GET'])
+def show_results():
+    if(request.method == 'GET'):
+        return render_template('result.html', arm_angle = command.realtime_angle, back_distance = command.realtime_curve, 
+        leg_angle = command.realtime_leg, hand_angle = command.realtime_hand)
+
 
 @app.route("/data", methods=['GET'])
 def show_data():
