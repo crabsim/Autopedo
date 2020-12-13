@@ -106,7 +106,7 @@
       }
  .week {
       display:flex;
-      justfiy-content:space-between;
+      justify-content:space-between;
       }
       .colums {
       display:flex;
@@ -216,25 +216,30 @@ cursor: pointer;
         <br/>
         <fieldset>
           <legend>Body Part</legend>
-           <div class="colums">
-               <div class="question">
-               <div class="question-answer">
-          <div >
-            <input type="radio" value="arm" id="radio_1" name="activity"/>
-                <label for="radio_1" class="radio"><span>Arm</span></label>
-          </div>
-          <div >
-            <input type="radio" value="none" id="radio_2" name="activity"/>
-                <label for="radio_2" class="radio"><span>Leg</span></label>
-          </div>
-          <div >
-            <input type="radio" value="none" id="radio_1" name="activity"/>
-                <label for="radio_3" class="radio"><span>Back</span></label>
-          </div>
-        </div>
-        {{ans}}
-    </div>
-                </fieldset>
+          <div class="colums">
+              <div class="question">
+                <div class="question-answer">
+                  <div >
+                    <input type="radio" value="arm" id="radio_1" name="activity"/>
+                    <label for="radio_1" class="radio"><span>Arm</span></label>
+                  </div>
+                  <div>
+                    <input type="radio" value="none" id="radio_2" name="activity"/>
+                    <label for="radio_2" class="radio"><span>Leg</span></label>
+                  </div>
+                  <div>
+                    <input type="radio" value="none" id="radio_3" name="activity"/>
+                    <label for="radio_3" class="radio"><span>Back</span></label>
+                  </div>
+                  <div>
+                    <input type="radio" value="none" id="radio_4" name="activity"/>
+                    <label for="radio_4" class="radio"><span>Hand</span></label>
+                  </div>
+                </div>
+                {{ans}}
+              </div>
+            </div>
+        </fieldset>
         <div class="btn-block">
           <button type="submit" href="/">Submit</button>
         </div>
