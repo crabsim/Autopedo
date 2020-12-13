@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Camp Registration</title>
+    <title>Autopedo</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <style>
@@ -209,31 +209,34 @@ cursor: pointer;
     <div class="testbox">
       <form method="POST">
         <div class="banner">
-          <h1>Arm</h1>
+          <h1>Autopedo</h1>
         </div>
         <br/>
         
         <br/>
         <fieldset>
-          <legend>Metrics</legend>
+          <legend>Body Part</legend>
            <div class="colums">
-          <div class="item">
-            <label for="fname"> Angle<span>*</span></label>
-            <input id="fname" type="number" name="angle" />
+               <div class="question">
+               <div class="question-answer">
+          <div >
+            <input type="radio" value="arm" id="radio_1" name="activity"/>
+                <label for="radio_1" class="radio"><span>Arm</span></label>
           </div>
-          <div class="item">
-            <label for="lname"> No. of Times<span>*</span></label>
-            <input id="lname" type="number" name="no_of_times" />
+          <div >
+            <input type="radio" value="none" id="radio_2" name="activity"/>
+                <label for="radio_2" class="radio"><span>Leg</span></label>
           </div>
- <div class="item">
-            <label for="address1">Torque<span>*</span></label>
-            <input id="address1" type="number"   name="torque" />
+          <div >
+            <input type="radio" value="none" id="radio_1" name="activity"/>
+                <label for="radio_3" class="radio"><span>Back</span></label>
           </div>
-  
-            
+        </div>
+        {{ans}}
+    </div>
                 </fieldset>
         <div class="btn-block">
-          <button type="submit" href="/result">Submit</button>
+          <button type="submit" href="/">Submit</button>
         </div>
       </form>
     </div>
