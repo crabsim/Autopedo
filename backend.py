@@ -31,18 +31,50 @@ def show_demo():
         command.new_data = "Yes"
         if(user_answer == "arm"):
             command.part = 1
-            return redirect(url_for('my_formarm'))
+            return redirect(url_for('show_inst'))
         elif(user_answer == "leg"):
-            command.part = 2
-            return redirect(url_for('my_formleg'))
-        elif(user_answer == "back"):
             command.part = 3
-            return redirect(url_for('my_formback'))
+            return redirect(url_for('show_inst'))
+        elif(user_answer == "back"):
+            command.part = 2
+            return redirect(url_for('show_inst'))
         elif(user_answer == "hand"):
             command.part = 4
-            return redirect(url_for('my_formhand'))
+            return redirect(url_for('show_inst'))
         else:
             return render_template('demo.html')
+
+
+@app.route("/inst", methods=['GET', 'POST'])
+def show_inst():
+    if(request.method == 'GET'):
+        return render_template('inst.html')
+    if(request.method == 'POST'):
+        user_answer = request.form['activity']
+        if(user_answer == "exercise"):
+            command.inst = 2
+            if(command.part == 1):
+                return redirect(url_for('my_formarm'))
+            elif(command.part == 3):
+                return redirect(url_for('my_formleg'))
+            elif(command.part == 2):
+                return redirect(url_for('my_formback'))
+            elif(command.part == 4):
+                return redirect(url_for('my_formhand'))
+            else:
+                return render_template('demo.html')
+        if(user_answer == "measurement"):
+            command.inst = 1
+            if(command.part == 1):
+                return redirect(url_for('show_results'))
+            elif(command.part == 3):
+                return redirect(url_for('show_results'))
+            elif(command.part == 2):
+                return redirect(url_for('show_results'))
+            elif(command.part == 4):
+                return redirect(url_for('show_results'))
+            else:
+                return render_template('demo.html')
 
 
 @app.route('/arm', methods=['GET', 'POST'])
@@ -148,6 +180,7 @@ def show_hand():
         content = request.get_json()
         command.angle = content['angle']
 
+
 @app.route("/no", methods=['GET'])
 def show_res2():
     if(request.method == 'GET'):
@@ -161,13 +194,13 @@ def show_status():
             command.new_data = "No"
             command.start = "Yes"
             return(jsonify(
-                NewData = "Yes",
-                Part = command.part,
-                Inst = command.instruction
+                NewData="Yes",
+                Part=command.part,
+                Inst=command.instruction
             ))
         else:
             return(jsonify(
-                NewData = "No",
+                NewData="No",
             ))
 
 
@@ -226,11 +259,12 @@ def post_hand():
         else:
             return command.start
 
+
 @app.route("/results", methods=['GET'])
 def show_results():
     if(request.method == 'GET'):
-        return render_template('result.html', arm_angle = command.realtime_angle, back_distance = command.realtime_curve, 
-        leg_angle = command.realtime_leg, hand_angle = command.realtime_hand)
+        return render_template('result.html', arm_angle=command.realtime_angle, back_distance=command.realtime_curve,
+                               leg_angle=command.realtime_leg, hand_angle=command.realtime_hand)
 
 
 @app.route("/data", methods=['GET'])
@@ -253,4 +287,4 @@ def show_data():
 
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(debug=True)
