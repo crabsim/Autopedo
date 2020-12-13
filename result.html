@@ -4,6 +4,25 @@
         <title>
             A test
         </title>
+        <style>
+            body{
+                color: white;
+                background-image: url("../../images/overlay.png"),
+    linear-gradient(
+      45deg,
+      rgba(114, 97, 147, 0.175) 25%,
+      rgba(227, 123, 124, 0.175) 50%,
+      rgba(255, 228, 180, 0.175)
+    );
+  background-size: 128px 128px, auto;
+  background-color: #6c5e86;
+            }
+            .result{
+                text-align: center;
+    margin-top: 30%;
+    font-size: x-large;
+            }
+        </style>
     </head>
     <body>
         <script type="text/javascript">
@@ -11,9 +30,11 @@
               location.reload();
             }, 10 );
         </script>
-        {{arm_angle}}<br>
-        {{back_distance}}<br>
-        {{leg_angle}}<br>
-        {{hand_angle}}
+        <div class="result">
+        <strong>Arm Angle-</strong> {{arm_angle}}<br/><br/>
+        <strong>>Back-Distance-</strong> {{back_distance}}<br/><br/>
+        <strong>Leg Angle- </strong>{{leg_angle}}<br><br/>
+        <strong>Hand Angle-</strong> {{hand_angle}}<br/>
+    </div>
     </body>
 </html>
